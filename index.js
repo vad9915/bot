@@ -1,6 +1,6 @@
 var TelegramBot = require('node-telegram-bot-api');
 
-var token = 1007860085:AAEHDu3IZkZoptFcm5qePDA5s1yf4ZCZIwQ;
+var token = '1007860085:AAEHDu3IZkZoptFcm5qePDA5s1yf4ZCZIwQ';
 var bot = new TelegramBot(token, {polling: true});
 
 var notes = [];
@@ -12,7 +12,7 @@ bot.onText(/напомни (.+) в (.+)/, function (msg, match) {
 
     notes.push({ 'uid': userId, 'time': time, 'text': text });
 
-    bot.sendMessage(userId, 'Отлично! Я обязательно напомню, если не сдохну :)');
+    bot.sendMessage(userId, 'Отлично! Я обязательно напомню, если не забуду :)');
 });
 
 setInterval(function(){
